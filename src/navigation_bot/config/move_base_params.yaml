@@ -1,0 +1,24 @@
+shutdown_costmaps: false
+controller_frequency: 10.0
+# 8
+planner_patience: 30.0
+# 3
+controller_patience: 15.0
+conservative_reset_dist: 3.0
+planner_frequency: 5.0
+# 10
+oscillation_timeout: 15.0
+oscillation_distance: 0.1
+recovery_behavior_enabled: true  #false
+clearing_rotation_allowed: true   #false
+# max_planning_retries: -1.0
+
+# recovery_behaviors:
+#   - name: costmap_reset
+#     type: clear_costmap_recovery/ClearCostmapRecovery
+
+# costmap_reset:
+#   reset_distance: 0.0
+#   layer_names: ["my_layer"]
+# recovery_behaviors:
+#     - {name: clear_costmap_recovery, type: clear_costmap_recovery/ClearCostmapRecovery}

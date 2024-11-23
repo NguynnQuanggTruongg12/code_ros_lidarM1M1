@@ -1,0 +1,8 @@
+prefix=/home/robot/catkin_ws/devel
+
+Name: navigation_bot
+Description: Description of navigation_bot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

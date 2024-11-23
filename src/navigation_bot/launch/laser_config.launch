@@ -1,0 +1,9 @@
+  <launch>
+  
+	  <node pkg="laser_filters" type="scan_to_scan_filter_chain"
+	      name="laser_filter">
+	    <rosparam command="load" file="$(find navigation_bot)/config/my_laser_config.yaml" />
+	    <remap from="scan" to="slamware_ros_sdk_server_node/scan"/>
+	  </node>
+  
+  </launch>

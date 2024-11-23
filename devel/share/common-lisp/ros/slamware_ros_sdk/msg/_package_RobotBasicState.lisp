@@ -1,0 +1,16 @@
+(cl:in-package slamware_ros_sdk-msg)
+(cl:export '(IS_MAP_BUILDING_ENABLED-VAL
+          IS_MAP_BUILDING_ENABLED
+          IS_LOCALIZATION_ENABLED-VAL
+          IS_LOCALIZATION_ENABLED
+          LOCALIZATION_QUALITY-VAL
+          LOCALIZATION_QUALITY
+          BOARD_TEMPERATURE-VAL
+          BOARD_TEMPERATURE
+          BATTERY_PERCENTAGE-VAL
+          BATTERY_PERCENTAGE
+          IS_DC_IN-VAL
+          IS_DC_IN
+          IS_CHARGING-VAL
+          IS_CHARGING
+))

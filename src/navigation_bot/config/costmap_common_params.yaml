@@ -1,0 +1,98 @@
+# 2.5    3
+obstacle_range: 2.5
+raytrace_range: 2.5
+# 0.24    27
+footprint: [[-0.22, -0.22], [-0.22, 0.22], [0.22, 0.22], [0.22, -0.22]]
+#footprint: [[0.0, 0.0]]
+robot_radius: 0.2  # Đây là bán kính của hình tròn
+
+#0.35
+#robot_radius: 1
+#10
+#0.7
+# 2  0.5 (25/03)  0.7  0.4
+# 1.0
+inflation_radius: 0.8
+# thoong so tranh va vao chuong ngai vat 0.8   
+# >1 uu tien ne vat can, <1 uu tien duong di toi uu    3
+#13  10  1
+cost_scaling_factor: 10.0
+#neutral_cost: 66
+# 3
+# map_type: costmap
+# observation_sources: laser_scan_sensor
+# laser_scan_sensor: {data_type: LaserScan, topic: scan_filtered, marking: true, clearing: true}
+
+plugins:
+    - {name: static_layer,            type: "costmap_2d::StaticLayer"}
+    - {name: obstacle_layer,          type: "costmap_2d::ObstacleLayer"}
+    - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}
+
+# always_send_full_costmap: true
+
+obstacle_layer:
+  enabled: true
+  observation_sources: laser_scan_sensor
+  laser_scan_sensor: {sensor_frame: laser, data_type: LaserScan, topic: /scan_filtered, marking: true, clearing: true}
+  max_obstacle_height:  1.5
+  min_obstacle_height:  0.0
+  combination_method:   1
+   
+
+# inflation_layer:
+#   enabled:              true
+#   cost_scaling_factor:  10
+#   inflation_radius:     0.8 
+
+static_layer:
+  enabled:              true
+  map_topic:            "/map"
+  # subscribe_to_updates: true
+
+
+# #---(in meters)---
+# robot_radius: 0.0
+# footprint_padding: 0.0
+# footprint: [[-0.24, -0.24], [-0.24, 0.24], [0.24, 0.24], [0.24, -0.24]]  
+# transform_tolerance: 0.2
+# map_type: costmap
+
+# # always_send_full_costmap: true
+# observation_sources: laser_scan_sensor
+# laser_scan_sensor: {data_type: LaserScan, topic: scan_filtered, marking: true, clearing: true}
+# obstacle_layer:
+#  enabled: true
+#  obstacle_range: 3.0
+#  raytrace_range: 4.0
+#  inflation_radius: 0.2
+#  track_unknown_space: false 
+#  combination_method: 1  
+
+# #  observation_sources: laser_scan_sensor
+# #  laser_scan_sensor: {data_type: LaserScan, topic: scan_filtered, marking: true, clearing: true}
+
+
+# inflation_layer:
+#   enabled:              true
+#   cost_scaling_factor:  0.55 
+#   inflation_radius:     0.5 
+
+# static_layer:
+#   enabled:              true
+#   map_topic:            "/slamware_ros_sdk_server_node/map"
+
+
+
+  
+# static_layer:
+#   enabled:              true
+#   map_topic:            "/map"
+
+# inflation_layer:
+#   enabled:              true
+#   # 0.4  0.8
+#   cost_scaling_factor:  2
+#   inflation_radius:     0.8
+
+
+ 

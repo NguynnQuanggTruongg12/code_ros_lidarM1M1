@@ -1,0 +1,9 @@
+<launch>
+  <!-- Define một tham số với tên map_file và giá trị mặc định là mymapc303.yaml -->
+  <arg name="map_file" default="$(find navigation_bot)/map/mymapc303.yaml"/>
+
+  <!-- Sử dụng tham số map_file trong lệnh map_server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+</launch>
+
+
